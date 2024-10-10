@@ -1,0 +1,169 @@
+* {
+    /* Ensuring proper padding */
+    box-sizing: border-box;
+}
+
+html {
+    /* Set a consistent font across the website */
+    font-family: "Lucida Sans", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+.header {
+    background-color: darkgrey;
+    color: rgb(15, 15, 15);
+    padding: 15px;
+    text-align: center;
+}
+
+/* Base layout using CSS grid */
+.container {
+    display: grid;
+    /* Single column layout for mobile devices */
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 15px;
+}
+
+/* Navigation menu styling */
+.menu {
+    background-color: darkslateblue;
+    padding: 15px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: darkgray;
+    color: white;
+    text-align: center;
+    box-shadow: 0 1px 3px lightgray, grey;
+    border-radius: 3px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu li a:hover {
+    background-color: darkslateblue;
+    border-radius: 3px;
+}
+
+/* Main content section styling */
+.main {
+    background-color: rgb(248, 248, 248);
+    padding: 15px;
+}
+
+/* Registration form styling */
+.registrationForm {
+    background-color: #FFF;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+.registrationForm h2 {
+    text-align: center;
+    color: #424242;
+    margin-bottom: 30px;
+}
+
+.rForm-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #757575;
+}
+
+input[type="text"], 
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: purple;
+    outline: none;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    font-size: 16px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #3700b3;
+}
+
+/* Right sidebar styling */
+.aside {
+    background-color: darkslateblue;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 1px 3px lightgray, grey;
+}
+
+/* Footer section styling */
+.footer {
+    background-color: darkgrey;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 11px;
+}
+
+/* Image responsiveness */
+.responsive-img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Media query for larger screen sizes (min-width: 700px) */
+@media only screen and (min-width: 700px) {
+    .container {
+        /* Three-column layout for larger screens */
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    .responsive-img {
+        max-width: 680px;
+        display: block;
+        margin: 0 auto;
+    }
+}
