@@ -3,8 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"> <!-- Menghubungkan dengan file CSS eksternal -->
     <title>Went to the waterfall and tea garden with friends on a beautiful Sabbath day</title>
+    <style>
+        * {
+            /* Ensuring proper padding */
+            box-sizing: border-box;
+        }
+
+        html {
+            /* Set a consistent font across the website */
+            font-family: "Lucida Sans", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styling */
+        .header {
+            background-color: darkgrey;
+            color: rgb(15, 15, 15);
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Base layout using CSS grid */
+        .container {
+            display: grid;
+            /* Single column layout for mobile devices */
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+            padding: 15px;
+        }
+
+        /* Navigation menu styling */
+        .menu {
+            background-color: darkslateblue;
+            padding: 15px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            padding: 8px;
+            margin-bottom: 8px;
+            background-color: darkgray;
+            color: white;
+            text-align: center;
+            box-shadow: 0 1px 3px lightgray, grey;
+            border-radius: 3px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .menu li a:hover {
+            background-color: darkslateblue;
+            border-radius: 3px;
+        }
+
+        /* Main content section styling */
+        .main {
+            background-color: rgb(248, 248, 248);
+            padding: 15px;
+        }
+
+        /* Right sidebar styling */
+        .aside {
+            background-color: darkslateblue;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 0 1px 3px lightgray, grey;
+        }
+
+        /* Footer section styling */
+        .footer {
+            background-color: darkgrey;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 11px;
+        }
+
+        /* Image responsiveness */
+        .responsive-img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Media query for larger screen sizes (min-width: 700px) */
+        @media only screen and (min-width: 700px) {
+            .container {
+                /* Three-column layout for larger screens */
+                grid-template-columns: 1fr 2fr 1fr;
+            }
+
+            .responsive-img {
+                max-width: 680px;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        /* Basic styles for gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            flex: 1 1 calc(33.333% - 20px);
+            max-width: 200px;
+            margin: 10px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .gallery-item {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -18,7 +164,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
-                <li><a href="portfolio.html">portfolio</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="Myholiday.html">My Holiday</a></li>
                 <li><a href="Registration.html">Registration</a></li>
@@ -38,6 +184,18 @@
                 <p>On Sabbath afternoon at the chapel, my friend said and invited me to go to the waterfall and tea garden. There I refused the invitation, but when I thought about it, I also felt bored in the room and had nothing else to do on that Sabbath. After arriving at the waterfall I was very happy and happy because I could see the beautiful view of the waterfall and the freshness of nature as well as many events that made me laugh with my friends. One of them was that my friend slipped from a bridge.</p>
 
                 <p>I felt quite satisfied with a memorable Sabbath afternoon trip with friends, we were able to start in a group and go home as a group, but on the way home the rain came down and poured on us until we were soaked but we enjoyed the rain that fell. After this incident we arrived physically tired but happy at heart, then we returned to our respective homes and carried out our usual activities for the sake of eternal survival.</p>
+                
+                <!-- Gallery Section -->
+                <h3>Gallery of My Holiday</h3>
+                <div class="gallery">
+                    <div class="gallery-item"><img src="senja.jpg" alt="Image 1"></div>
+                    <div class="gallery-item"><img src="buan.jpg" alt="Image 2"></div>
+                    <div class="gallery-item"><img src="four.jpg" alt="Image 3"></div>
+                    <div class="gallery-item"><img src="juara.jpg" alt="Image 4"></div>
+                    <div class="gallery-item"><img src="nego.jpg" alt="Image 5"></div>
+                    <div class="gallery-item"><img src="rano.jpg" alt="Image 6"></div>
+                    <div class="gallery-item"><img src="aldi.jpg" alt="Image 7"></div>
+                </div>
 
                 <p>Follow my Instagram at <a href="https://www.instagram.com/ranoabed30" target="_blank">@ranoabed30</a> :)</p>
                 <iframe src="bed.mp4" width="400" height="370" controls></iframe>
