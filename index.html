@@ -3,45 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Welcome to Website</title>
+    <title>Welcome to My Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="header">
-        <h1>Welcome to Web Programming 1</h1>
-    </div>
+<body class="bg-gray-100 text-gray-800">
 
-    <div class="container">
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="Myholiday.html">My Holiday</a></li>
-                <li><a href="Registration.html">Registration</a></li>
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold">Welcome to Web Programming 1</h1>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="bg-blue-700 text-white">
+        <div class="container mx-auto">
+            <ul class="flex justify-center space-x-4 py-2">
+                <li><a href="index.html" class="hover:underline">Home</a></li>
+                <li><a href="about.html" class="hover:underline">About Me</a></li>
+                <li><a href="portfolio.html" class="hover:underline">Portfolio</a></li>
+                <li><a href="Calculator.html" class="hover:underline">Calculator</a></li>
+                <li><a href="Registration.html" class="hover:underline">Registration</a></li>
             </ul>
         </div>
+    </nav>
 
-        <div class="main">
-            <h1>A little introduction about me on this simple web!</h1>
-            <img src="four.jpg" alt="Coba Coba" class="responsive-img">
-            <p>
-                Introduce my name Rano Hasibuan, I am from North Sumatra, precisely in the city of Tebing Tinggi, currently I am studying at the Adventist University of Indonesia. And here's a simple web view I created
+    <!-- Main Content -->
+    <main class="container mx-auto my-8 px-4">
+        <div class="text-center">
+            <h2 class="text-2xl font-semibold mb-4">A Little Introduction About Me</h2>
+            <img src="four.jpg" alt="Coba Coba" class="mx-auto rounded-lg shadow-lg w-1/2">
+            <p class="mt-4 text-lg">
+                My name is Rano Hasibuan, and I am from North Sumatra, precisely in the city of Tebing Tinggi. 
+                Currently, I am studying at the Adventist University of Indonesia. Here's a simple web view I created 
+                to showcase my passion for programming.
             </p>
         </div>
+    </main>
 
-        <div class="aside">
-            <h2>Some Tittle</h2>
-            <p>
-                Your content will be written here 
-            </p>
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 All rights reserved. Created by Rano Hasibuan.</p>
         </div>
+    </footer>
 
-        <div class="footer">
-            <p>
-                &copy; 2024 All rights reserved.
-            </p>
-        </div>
-    </div>
 </body>
 </html>
-  
