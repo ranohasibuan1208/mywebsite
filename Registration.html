@@ -4,76 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-blue-100 flex flex-col items-center min-h-screen">
 
-    <div class="header">
-        <h1>Registration Form for Fieldtrip</h1>
-    </div>
-
-    <div class="container">
-        <!-- Navigation Menu -->
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="Myholiday.html">My Holiday</a></li>
-                <li><a href="registration.html">Registration</a></li>
+    <!-- Navigation Menu -->
+    <nav class="bg-blue-700 text-white w-full">
+        <div class="container mx-auto">
+            <ul class="flex justify-center space-x-4 py-4">
+                <li><a href="index.html" class="hover:underline">Home</a></li>
+                <li><a href="about.html" class="hover:underline">About Me</a></li>
+                <li><a href="portfolio.html" class="hover:underline">Portfolio</a></li>
+                <li><a href="Calculator.html" class="hover:underline">Calculator</a></li>
+                <li><a href="registration.html" class="hover:underline">Registration</a></li>
             </ul>
         </div>
+    </nav>
 
-        <!-- Main Content -->
-        <div class="main">
-            <div class="registrationForm">
-                <h2>Fieldtrip Registration Form</h2>
-                <form action="process.php" method="POST">
-                    <div class="rForm-group">
-                        <label for="fullname">Full Name</label>
-                        <input type="text" id="fullname" name="fullname" required>
-                    </div>
-                    <div class="rForm-group">
-                        <label for="birthdate">Birth Date</label>
-                        <input type="date" id="birthdate" name="birthdate" required>
-                    </div>
-                    <div class="rForm-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="text" id="phone" name="phone" required>
-                    </div>
-                    <div class="rForm-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="rForm-group">
-                        <label for="address">Address</label>
-                        <input type="text" id="address" name="address" required>
-                    </div>
-                    <div class="rForm-group">
-                        <label for="town">Town</label>
-                        <input type="text" id="town" name="town" required>
-                    </div>
-                    <div class="rForm-group">
-                        <label for="zipcode">Zip Code</label>
-                        <input type="text" id="zipcode" name="zipcode" required>
-                    </div>
-                    <button type="submit" class="btn-submit">Submit</button>
-                </form>
-            </div>
-        </div>
+    <div class="container mx-auto mt-10 px-4">
+        <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-700 mb-6"> Registration Form</h2>
+            <form id="registrationForm" class="space-y-4">
+                <!-- Full Name -->
+                <div>
+                    <label for="fullname" class="block text-gray-600">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" class="w-full p-2 border border-gray-300 rounded" maxlength="40" required>
+                    <div id="nameError" class="text-red-500 text-sm hidden">Name is required and should be up to 40 characters.</div>
+                </div>
 
-        <!-- Right Sidebar -->
-        <div class="aside">
-            <h2>Additional Info</h2>
-            <p>Feel free to reach out to me through my social media or institutional links.</p>
-        </div>
+                <!-- Phone Number -->
+                <div>
+                    <label for="phone" class="block text-gray-600">Phone Number</label>
+                    <input type="text" id="phone" name="phone" class="w-full p-2 border border-gray-300 rounded" maxlength="15" required>
+                    <div id="phoneError" class="text-red-500 text-sm hidden">Phone number should be numeric and up to 15 digits.</div>
+                </div>
 
-        <!-- Footer -->
-        <div class="footer">
-            <p>&copy; 2024 All rights reserved.</p>
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block text-gray-600">Email</label>
+                    <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded" required>
+                    <div id="emailError" class="text-red-500 text-sm hidden">Please enter a valid email address.</div>
+                </div>
+
+                <!-- Password -->
+                <div>
+                    <label for="password" class="block text-gray-600">Password</label>
+                    <input type="password" id="password" name="password" class="w-full p-2 border border-gray-300 rounded" required>
+                    <div id="passwordError" class="text-red-500 text-sm hidden">Password must be 8-16 characters, including 1 uppercase, 1 lowercase, and 1 number (no symbols).</div>
+                </div>
+
+                <button type="submit" class="w-full bg-blue-700 text-white py-2 rounded hover:bg-blue-800">Submit</button>
+            </form>
         </div>
     </div>
 
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Reset previous error messages
+            document.getElementById('nameError').classList.add('hidden');
+            document.getElementById('phoneError').classList.add('hidden');
+            document.getElementById('emailError').classList.add('hidden');
+            document.getElementById('passwordError').classList.add('hidden');
+            
+            let valid = true;
+
+            // Full Name Validation
+            const name = document.getElementById('fullname').value;
+            if (name.length === 0 || name.length > 40) {
+                document.getElementById('nameError').classList.remove('hidden');
+                valid = false;
+            }
+
+            // Phone Number Validation
+            const phone = document.getElementById('phone').value;
+            const phoneRegex = /^[0-9]{1,15}$/;
+            if (!phone.match(phoneRegex)) {
+                document.getElementById('phoneError').classList.remove('hidden');
+                valid = false;
+            }
+
+            // Email Validation
+            const email = document.getElementById('email').value;
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!email.match(emailRegex)) {
+                document.getElementById('emailError').classList.remove('hidden');
+                valid = false;
+            }
+
+            // Password Validation
+            const password = document.getElementById('password').value;
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,16}$/;
+            if (!password.match(passwordRegex)) {
+                document.getElementById('passwordError').classList.remove('hidden');
+                valid = false;
+            }
+
+            // If all validations pass
+            if (valid) {
+                alert('Registration Successful');
+                // Here you can submit the form to the server
+            }
+        });
+    </script>
 </body>
 </html>
