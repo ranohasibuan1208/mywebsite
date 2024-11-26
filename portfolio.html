@@ -3,85 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"> <!-- Menghubungkan dengan file CSS eksternal -->
-    <title>My Skill</title>
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100 text-gray-800">
 
-    <div class="header">
-        <h1>My Portfolio</h1>
-    </div>
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold">My Portfolio</h1>
+        </div>
+    </header>
 
-    <div class="container">
-        <!-- Navigation Menu -->
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="Myholiday.html">My Holiday</a></li>
-                <li><a href="Registration.html">Registration</a></li>
+    <!-- Navigation Menu -->
+    <nav class="bg-blue-700 text-white">
+        <div class="container mx-auto">
+            <ul class="flex justify-center space-x-4 py-2">
+                <li><a href="index.html" class="hover:underline">Home</a></li>
+                <li><a href="about.html" class="hover:underline">About Me</a></li>
+                <li><a href="portfolio.html" class="hover:underline">Portfolio</a></li>
+                <li><a href="Calculator.html" class="hover:underline">Calculator</a></li>
+                <li><a href="Registration.html" class="hover:underline">Registration</a></li>
             </ul>
         </div>
+    </nav>
 
-        <!-- Main Content -->
-        <div class="main">
-            <header>
-                <img src="nego.jpg" alt="logo Insectum" class="responsive-img">
-                <h1>My Skills</h1>
-            </header>
-
-            <!-- Skills Table -->
-            <table>
-                <thead>
-                    <tr>
-                        <th>No. / Skill</th>
-                        <th>Proficiency</th>
-                        <th>Experience</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1. C++</td>
-                        <td>Average</td>
-                        <td>1 Year</td>
-                    </tr>
-                    <tr>
-                        <td>2. Singing</td>
-                        <td>Average</td>
-                        <td>2 Years</td>
-                    </tr>
-                    <tr>
-                        <td>3. Football</td>
-                        <td>Advance</td>
-                        <td>6 Years</td>
-                    </tr>
-                    <tr>
-                        <td>4. Guitar</td>
-                        <td>Average</td>
-                        <td>3 Years</td>
-                    </tr>
-                    <tr>
-                        <td>5. Drawing</td>
-                        <td>Average</td>
-                        <td>5 Years</td>
-                    </tr>
-                </tbody>
-            </table>
+    <!-- Main Content -->
+    <main class="container mx-auto my-8 px-4">
+        <h2 class="text-2xl font-semibold text-center mb-6">Showcase of My Work</h2>
+        
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Portfolio Item 1 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="aldi.jpg" alt="Project 1" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold">Project 1</h3>
+                    <p class="text-sm text-gray-600">Description of the project or work displayed in the image.</p>
+                </div>
+            </div>
+            <!-- Portfolio Item 2 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="buan.jpg" alt="Project 2" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold">Project 2</h3>
+                    <p class="text-sm text-gray-600">Description of the project or work displayed in the image.</p>
+                </div>
+            </div>
+            <!-- Portfolio Item 3 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="four.jpg" alt="Project 3" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold">Project 3</h3>
+                    <p class="text-sm text-gray-600">Description of the project or work displayed in the image.</p>
+                </div>
+            </div>
+            <!-- Portfolio Item 4 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="juara.jpg" alt="Project 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold">Project 4</h3>
+                    <p class="text-sm text-gray-600">Description of the project or work displayed in the image.</p>
+                </div>
+            </div>
+            <!-- Portfolio Item 5 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="nego.jpg" alt="Project 5" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold">Project 5</h3>
+                    <p class="text-sm text-gray-600">Description of the project or work displayed in the image.</p>
+                </div>
+            </div>
+            <!-- Portfolio Item 6 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="rano.jpg" alt="Project 6" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold">Project 6</h3>
+                    <p class="text-sm text-gray-600">Description of the project or work displayed in the image.</p>
+                </div>
+            </div>
+            <!-- Portfolio Item 7 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="senja.jpg" alt="Project 7" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold">Project 7</h3>
+                    <p class="text-sm text-gray-600">Description of the project or work displayed in the image.</p>
+                </div>
+            </div>
+            <!-- Portfolio Item 8 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="rini.jpg" alt="Project 8" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold">Project 8</h3>
+                    <p class="text-sm text-gray-600">Description of the project or work displayed in the image.</p>
+                </div>
+            </div>
+            <!-- Portfolio Item 9 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="rut.jpg" alt="Project 9" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold">Project 9</h3>
+                    <p class="text-sm text-gray-600">Description of the project or work displayed in the image.</p>
+                </div>
+            </div>
         </div>
+    </main>
 
-        <!-- Right Sidebar -->
-        <div class="aside">
-            <h2>Additional Info</h2>
-            <p>Some additional information about my skills and experiences.</p>
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 All rights reserved. Created by Rano Hasibuan.</p>
         </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <p>&copy; 2024 All rights reserved.</p>
-        </div>
-    </div>
+    </footer>
 
 </body>
 </html>
