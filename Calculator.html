@@ -13,43 +13,54 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            min-height: 10vh;
             margin: 0;
         }
 
         .calculator {
-            width: 320px;
+            width: 420px;
             background-color: #3e5e92;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
 
         #display {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             background-color: #f8fafc;
             color: #1e293b;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
             text-align: right;
-            min-height: 50px;
+            min-height: 70px;
             overflow-x: auto;
+            word-wrap: break-word;
         }
 
         button {
             background-color: #3b82f6;
             color: white;
             border: none;
-            padding: 15px;
-            font-size: 1.2rem;
-            border-radius: 8px;
+            padding: 20px;
+            font-size: 1.5rem;
+            border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         button:hover {
             background-color: #2563eb;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .operator {
+            background-color: #f59e0b;
+        }
+
+        .operator:hover {
+            background-color: #d97706;
         }
 
         .span-2 {
@@ -59,11 +70,25 @@
         .calculator-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            gap: 15px;
+        }
+
+        /* For button columns */
+        .button-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
     </style>
 </head>
 <body>
+
+    <!-- Header Section -->
+    <header class="bg-blue-600 text-white py-4 w-full">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold">Calculator</h1>
+        </div>
+    </header>
 
     <!-- Navigation Menu -->
     <nav class="bg-blue-700 text-white w-full">
@@ -79,32 +104,40 @@
     </nav>
 
     <h1 class="text-3xl font-bold text-gray-700 my-6">Simple Calculator</h1>
-    
+
     <div class="calculator">
         <!-- Display -->
-        <div id="display" class="overflow-hidden">0</div>
+        <div id="display">0</div>
 
         <!-- Buttons -->
         <div class="calculator-grid">
-            <button onclick="press('7')">7</button>
-            <button onclick="press('8')">8</button>
-            <button onclick="press('9')">9</button>
-            <button onclick="press('/')">/</button>
+            <div class="button-column">
+                <button onclick="press('7')">7</button>
+                <button onclick="press('4')">4</button>
+                <button onclick="press('1')">1</button>
+                <button onclick="press('0')">0</button>
+            </div>
 
-            <button onclick="press('4')">4</button>
-            <button onclick="press('5')">5</button>
-            <button onclick="press('6')">6</button>
-            <button onclick="press('*')">*</button>
+            <div class="button-column">
+                <button onclick="press('8')">8</button>
+                <button onclick="press('5')">5</button>
+                <button onclick="press('2')">2</button>
+                <button onclick="press('.')">.</button>
+            </div>
 
-            <button onclick="press('1')">1</button>
-            <button onclick="press('2')">2</button>
-            <button onclick="press('3')">3</button>
-            <button onclick="press('-')">-</button>
+            <div class="button-column">
+                <button onclick="press('9')">9</button>
+                <button onclick="press('6')">6</button>
+                <button onclick="press('3')">3</button>
+                <button onclick="clearDisplay()">C</button>
+            </div>
 
-            <button onclick="press('0')">0</button>
-            <button onclick="press('.')">.</button>
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="press('+')">+</button>
+            <div class="button-column">
+                <button class="operator" onclick="press('/')">/</button>
+                <button class="operator" onclick="press('*')">*</button>
+                <button class="operator" onclick="press('-')">-</button>
+                <button class="operator" onclick="press('+')">+</button>
+            </div>
 
             <button class="span-2 bg-green-500 hover:bg-green-600" onclick="calculate()">=</button>
         </div>
