@@ -3,95 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>A Simple Calculator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #a5b2cc;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 10vh;
             margin: 0;
-        }
-
-        .calculator {
-            width: 420px;
-            background-color: #3e5e92;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        #display {
-            font-size: 2.5rem;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            text-align: right;
-            min-height: 70px;
-            overflow-x: auto;
-            word-wrap: break-word;
-        }
-
-        button {
-            background-color: #3b82f6;
-            color: white;
-            border: none;
-            padding: 20px;
-            font-size: 1.5rem;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        button:hover {
-            background-color: #2563eb;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .operator {
-            background-color: #f59e0b;
-        }
-
-        .operator:hover {
-            background-color: #d97706;
-        }
-
-        .span-2 {
-            grid-column: span 2;
-        }
-
-        .calculator-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        /* For button columns */
-        .button-column {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
         }
     </style>
 </head>
-<body>
-
-    <!-- Header Section -->
-    <header class="bg-blue-600 text-white py-4 w-full">
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-4">
         <div class="container mx-auto text-center">
             <h1 class="text-3xl font-bold">Calculator</h1>
         </div>
     </header>
 
     <!-- Navigation Menu -->
-    <nav class="bg-blue-700 text-white w-full">
+    <nav class="bg-blue-700 text-white">
         <div class="container mx-auto">
             <ul class="flex justify-center space-x-4 py-2">
                 <li><a href="index.html" class="hover:underline">Home</a></li>
@@ -103,78 +32,75 @@
         </div>
     </nav>
 
-    <h1 class="text-3xl font-bold text-gray-700 my-6">Simple Calculator</h1>
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center">
+        <h1 class="text-3xl font-bold mb-5">A Simple Calculator</h1>
 
-    <div class="calculator">
-        <!-- Display -->
-        <div id="display">0</div>
+        <!-- Kalkulator -->
+        <div class="calculator grid grid-cols-4 gap-2 p-6 border border-gray-300 bg-gray-700 shadow-md rounded-lg w-72">
+            <p id="display" class="col-span-4 text-right text-lg p-3 border border-white bg-white rounded text-gray-700 font-bold">
+                0
+            </p>
 
-        <!-- Buttons -->
-        <div class="calculator-grid">
-            <div class="button-column">
-                <button onclick="press('7')">7</button>
-                <button onclick="press('4')">4</button>
-                <button onclick="press('1')">1</button>
-                <button onclick="press('0')">0</button>
-            </div>
+            <button onclick="press('7')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">7</button>
+            <button onclick="press('8')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">8</button>
+            <button onclick="press('9')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">9</button>
+            <button onclick="press('/')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">/</button>
 
-            <div class="button-column">
-                <button onclick="press('8')">8</button>
-                <button onclick="press('5')">5</button>
-                <button onclick="press('2')">2</button>
-                <button onclick="press('.')">.</button>
-            </div>
+            <button onclick="press('4')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">4</button>
+            <button onclick="press('5')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">5</button>
+            <button onclick="press('6')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">6</button>
+            <button onclick="press('*')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">*</button>
 
-            <div class="button-column">
-                <button onclick="press('9')">9</button>
-                <button onclick="press('6')">6</button>
-                <button onclick="press('3')">3</button>
-                <button onclick="clearDisplay()">C</button>
-            </div>
+            <button onclick="press('1')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">1</button>
+            <button onclick="press('2')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">2</button>
+            <button onclick="press('3')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">3</button>
+            <button onclick="press('-')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">-</button>
 
-            <div class="button-column">
-                <button class="operator" onclick="press('/')">/</button>
-                <button class="operator" onclick="press('*')">*</button>
-                <button class="operator" onclick="press('-')">-</button>
-                <button class="operator" onclick="press('+')">+</button>
-            </div>
+            <button onclick="press('0')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">0</button>
+            <button onclick="press('.')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">.</button>
+            <button onclick="clearConsole()" class="p-3 bg-red-500 text-white rounded hover:bg-red-600">C</button>
+            <button onclick="press('+')" class="p-3 bg-gray-300 rounded hover:bg-gray-400">+</button>
 
-            <button class="span-2 bg-green-500 hover:bg-green-600" onclick="calculate()">=</button>
+            <button onclick="calculate()" class="col-span-4 p-3 bg-green-500 text-white rounded hover:bg-green-600">=</button>
         </div>
-    </div>
+    </main>
 
+    <!-- Script JavaScript -->
     <script>
+        // Declaration of Expression
         let expression = '';
 
-        // Function to handle button press
         function press(value) {
             expression += value;
             updateDisplay();
         }
 
-        // Function to evaluate the expression
         function calculate() {
             try {
                 const result = eval(expression);
                 expression = result.toString();
                 updateDisplay();
             } catch (error) {
-                alert("Invalid Expression!");
-                clearDisplay();
+                console.error("Error: Invalid Expression!");
+                expression = '';
+                updateDisplay();
             }
         }
 
-        // Function to clear the display
-        function clearDisplay() {
+        function updateDisplay() {
+            document.getElementById("display").innerText = expression || 0;
+        }
+
+        function clearConsole() {
             expression = '';
             updateDisplay();
         }
-
-        // Function to update the display
-        function updateDisplay() {
-            document.getElementById("display").innerText = expression || '0';
-        }
     </script>
 
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4 mt-10 text-center">
+        <p>&copy; 2024 All rights reserved. Created by Rano Hasibuan.</p>
+    </footer>
 </body>
 </html>
