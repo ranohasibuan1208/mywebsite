@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to My Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Menyembunyikan latar belakang gambar */
+        img.transparent-bg {
+            background-color: transparent;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-white text-gray-800">
 
     <!-- Header -->
     <header class="bg-blue-600 text-white py-4">
@@ -29,8 +35,15 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="container mx-auto my-8 px-4">
-        <div class="text-center">
+    <main class="container mx-auto my-8 px-4 relative">
+        <!-- Logo Section -->
+        <div class="absolute top-0 left-0 mt-35 ml-35 flex items-center space-x-4">
+            <img src="unai.jpg" alt="UNAI Logo" class="w-10 h-10 rounded-full shadow-lg transparent-bg">
+            <img src="ftiunai.jpg" alt="FTI Logo" class="w-10 h-10 rounded-full shadow-lg transparent-bg">
+        </div>
+
+        <!-- Introduction Section -->
+        <div class="text-center mt-16">
             <h2 class="text-2xl font-semibold mb-4">A Little Introduction About Me</h2>
             <img src="four.jpg" alt="Coba Coba" class="mx-auto rounded-lg shadow-lg w-1/2">
             <p class="mt-4 text-lg">
