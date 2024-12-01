@@ -37,7 +37,7 @@
     <!-- Main Content -->
     <main class="container mx-auto my-8 px-4 relative">
         <!-- Logo Section -->
-        <div class="absolute top-0 left-0 mt-35 ml-35 flex items-center space-x-4">
+        <div class="absolute top-0 left-0 mt-4 ml-4 flex items-center space-x-4">
             <img src="unai.jpg" alt="UNAI Logo" class="w-10 h-10 rounded-full shadow-lg transparent-bg">
             <img src="ftiunai.jpg" alt="FTI Logo" class="w-10 h-10 rounded-full shadow-lg transparent-bg">
         </div>
@@ -46,11 +46,14 @@
         <div class="text-center mt-16">
             <h2 class="text-2xl font-semibold mb-4">A Little Introduction About Me</h2>
             <img src="four.jpg" alt="Coba Coba" class="mx-auto rounded-lg shadow-lg w-1/2">
-            <p class="mt-4 text-lg">
+            <p class="mt-4 text-lg" id="introduction">
                 My name is Rano Hasibuan, and I am from North Sumatra, precisely in the city of Tebing Tinggi. 
                 Currently, I am studying at the Adventist University of Indonesia. Here's a simple web view I created 
                 to showcase my passion for programming.
             </p>
+            <button id="changeTextBtn" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Click to Change Introduction
+            </button>
         </div>
     </main>
 
@@ -61,5 +64,7 @@
         </div>
     </footer>
 
+    <!-- Link to JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
